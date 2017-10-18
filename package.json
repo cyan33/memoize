@@ -1,0 +1,25 @@
+{
+  "name": "@changyan/memoize",
+  "version": "0.0.1",
+  "description": "A JavaScript function wrapper to memorize / cache result with the same input",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thomasyimgit/memoize.git"
+  },
+  "keywords": [
+    "cache",
+    "memoize",
+    "fp",
+    "wrapper"
+  ],
+  "author": "Chang Yan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thomasyimgit/memoize/issues"
+  },
+  "homepage": "https://github.com/thomasyimgit/memoize#readme"
+}
