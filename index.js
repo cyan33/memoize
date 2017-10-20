@@ -1,8 +1,8 @@
 function memoize(fn) {
   let cache = {}
   return function(...args) {
-    if (cache[args]) return cache[args]
-    return cache[args] = fn.apply(fn, args)
+    if (JSON.stringify(args) in cache) return cache[JSON.stringify(args)]
+    return cache[JSON.stringify(args)] = fn.apply(fn, args)
   }
 }
 
