@@ -11,13 +11,14 @@ function memoize(fn) {
  */
 
 function memoizeAsync(fn) {
-  if (!fn.then) {
-    throw new Error('the function passed into memoizeAsync should return a thenable object, for instance, a promise')
-  }
   let cache = Object.create(null)
   return function(...args) {
     if (JSON.stringify(args) in cache) return cache[JSON.stringify(args)]
-    return fn.apply(fn, args).then(res => cache[JSON.stringify(args)] = res)
+    try {
+      return fn.apply(fn, args).then(res => cache[JSON.stringify(args)] = res)
+    } catch(e) {
+      throw new Error('The most possible reason is that the async function you passed in doesn\'t return a thenable object.')
+    }
   }
 }
 
